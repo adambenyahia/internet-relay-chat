@@ -31,5 +31,5 @@ int main(int argc, char *argv[])
         }
     }
     else
-        std::cout << RED << "Error : invalid args" << DEFAULT << std::endl;
+        std::cout << RED << "Usage: ./ircserv <port> <password>" << DEFAULT << std::endl;
 }

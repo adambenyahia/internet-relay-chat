@@ -3,8 +3,8 @@
 std::string Utils::getTime()
 {
     std::stringstream timeStream;
-    time_t now = std::time(NULL);
-    struct tm *tm_struct = std::localtime(&now);
+    time_t now = time(NULL);
+    struct tm *tm_struct = localtime(&now);
     int hour = tm_struct->tm_hour;
     int min = tm_struct->tm_min;
     timeStream << RED << "[" << hour << ":" << min << "]" << DEFAULT;
@@ -13,9 +13,9 @@ std::string Utils::getTime()
 
 std::string Utils::getDate()
 {
-    time_t now = std::time(NULL);
-    tm *ptm = std::localtime(&now);
-    std::string date(std::asctime(ptm));
+    time_t now = time(NULL);
+    tm *ptm = localtime(&now);
+    std::string date(asctime(ptm));
     if (date.find('\n') != std::string::npos)
         date = date.substr(0, date.find('\n'));
     return date;
